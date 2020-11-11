@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace sis_vendas
 {
-    public partial class Form1 : Form
+    public partial class frm_principal : Form
     {
-        public Form1()
+        public frm_principal()
         {
             InitializeComponent();
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm_cadastro = new frm_cadastrarProdutos();
+            Form frm_cadastro = new frm_cadastrarProdutos(null, null);
             frm_cadastro.Show();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm_Busca = new frm_buscaProduto();
+            frm_Busca.Show();
         }
     }
 }

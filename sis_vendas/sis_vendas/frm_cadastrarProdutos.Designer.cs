@@ -31,12 +31,13 @@
             this.lbl_nome = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lbl_valor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Valor = new System.Windows.Forms.TextBox();
             this.lbl_qtd = new System.Windows.Forms.Label();
             this.txt_qtd = new System.Windows.Forms.TextBox();
             this.lbl_categoria = new System.Windows.Forms.Label();
-            this.txt_categoria = new System.Windows.Forms.TextBox();
             this.dgv_cadastrosProdutos = new System.Windows.Forms.DataGridView();
+            this.btn_Cadastrar = new System.Windows.Forms.Button();
+            this.cbx_Categoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cadastrosProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,12 +66,12 @@
             this.lbl_valor.TabIndex = 2;
             this.lbl_valor.Text = "Valor:";
             // 
-            // textBox1
+            // txt_Valor
             // 
-            this.textBox1.Location = new System.Drawing.Point(367, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_Valor.Location = new System.Drawing.Point(367, 6);
+            this.txt_Valor.Name = "txt_Valor";
+            this.txt_Valor.Size = new System.Drawing.Size(100, 20);
+            this.txt_Valor.TabIndex = 3;
             // 
             // lbl_qtd
             // 
@@ -87,7 +88,6 @@
             this.txt_qtd.Name = "txt_qtd";
             this.txt_qtd.Size = new System.Drawing.Size(100, 20);
             this.txt_qtd.TabIndex = 5;
-            this.txt_qtd.TextChanged += new System.EventHandler(this.txt_qtd_TextChanged);
             // 
             // lbl_categoria
             // 
@@ -98,13 +98,6 @@
             this.lbl_categoria.TabIndex = 6;
             this.lbl_categoria.Text = "Categoria:";
             // 
-            // txt_categoria
-            // 
-            this.txt_categoria.Location = new System.Drawing.Point(330, 45);
-            this.txt_categoria.Name = "txt_categoria";
-            this.txt_categoria.Size = new System.Drawing.Size(100, 20);
-            this.txt_categoria.TabIndex = 7;
-            // 
             // dgv_cadastrosProdutos
             // 
             this.dgv_cadastrosProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -113,17 +106,37 @@
             this.dgv_cadastrosProdutos.Size = new System.Drawing.Size(599, 168);
             this.dgv_cadastrosProdutos.TabIndex = 8;
             // 
+            // btn_Cadastrar
+            // 
+            this.btn_Cadastrar.Location = new System.Drawing.Point(518, 42);
+            this.btn_Cadastrar.Name = "btn_Cadastrar";
+            this.btn_Cadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cadastrar.TabIndex = 9;
+            this.btn_Cadastrar.Text = "Cadastrar";
+            this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
+            // 
+            // cbx_Categoria
+            // 
+            this.cbx_Categoria.FormattingEnabled = true;
+            this.cbx_Categoria.Location = new System.Drawing.Point(329, 45);
+            this.cbx_Categoria.Name = "cbx_Categoria";
+            this.cbx_Categoria.Size = new System.Drawing.Size(121, 21);
+            this.cbx_Categoria.TabIndex = 10;
+            this.cbx_Categoria.Text = "Selecione";
+            // 
             // frm_cadastrarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 273);
+            this.Controls.Add(this.cbx_Categoria);
+            this.Controls.Add(this.btn_Cadastrar);
             this.Controls.Add(this.dgv_cadastrosProdutos);
-            this.Controls.Add(this.txt_categoria);
             this.Controls.Add(this.lbl_categoria);
             this.Controls.Add(this.txt_qtd);
             this.Controls.Add(this.lbl_qtd);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Valor);
             this.Controls.Add(this.lbl_valor);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
@@ -141,11 +154,12 @@
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lbl_valor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Valor;
         private System.Windows.Forms.Label lbl_qtd;
         private System.Windows.Forms.TextBox txt_qtd;
         private System.Windows.Forms.Label lbl_categoria;
-        private System.Windows.Forms.TextBox txt_categoria;
         private System.Windows.Forms.DataGridView dgv_cadastrosProdutos;
+        private System.Windows.Forms.Button btn_Cadastrar;
+        private System.Windows.Forms.ComboBox cbx_Categoria;
     }
 }
