@@ -72,6 +72,9 @@
             this.txt_Valor.Name = "txt_Valor";
             this.txt_Valor.Size = new System.Drawing.Size(100, 20);
             this.txt_Valor.TabIndex = 3;
+            this.txt_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Valor.Click += new System.EventHandler(this.txt_Valor_Click);
+            this.txt_Valor.LostFocus += new System.EventHandler(this.txt_Valor_LostFocus);
             // 
             // lbl_qtd
             // 
@@ -141,7 +144,7 @@
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
             this.Name = "frm_cadastrarProdutos";
-            this.Text = "frm_cadastrarProdutos";
+            this.Text = "MMMMMMM";
             this.Load += new System.EventHandler(this.frm_cadastrarProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cadastrosProdutos)).EndInit();
             this.ResumeLayout(false);

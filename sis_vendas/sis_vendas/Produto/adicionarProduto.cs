@@ -9,7 +9,7 @@ namespace sis_vendas
         sisVendasContext dbContext = new sisVendasContext();
         Produto produto = new Produto();
 
-        public void adicionarProdutoes(string nome,string categoria, double valor, int qtd)
+        public void adicionarProdutos(string nome,string categoria, double valor, int qtd)
         {
 
             produto.Nome = nome;

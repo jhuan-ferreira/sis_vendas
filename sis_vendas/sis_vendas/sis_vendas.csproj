@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_AtualizaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AtualizaProduto.Designer.cs">
+      <DependentUpon>frm_AtualizaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto\atualizarProduto.cs" />
     <Compile Include="frm_buscaProduto.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,9 @@
     <Compile Include="Model\sisVendasContext.cs" />
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Model\VendaDetalhe.cs" />
+    <EmbeddedResource Include="frm_AtualizaProduto.resx">
+      <DependentUpon>frm_AtualizaProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_buscaProduto.resx">
       <DependentUpon>frm_buscaProduto.cs</DependentUpon>
     </EmbeddedResource>

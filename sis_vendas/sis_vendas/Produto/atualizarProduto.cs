@@ -17,6 +17,7 @@ namespace sis_vendas
 
             product.Nome = nome;
             product.Valor = valor;
+            product.Categoria = dbContext.Categoria.Where(c => c.Nome == categoria).First();
 
             dbContext.Entry(product).State = System.Data.Entity.EntityState.Modified;
             dbContext.SaveChanges();

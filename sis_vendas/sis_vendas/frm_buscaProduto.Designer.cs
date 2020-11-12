@@ -81,19 +81,19 @@
             this.menuStrip_Att,
             this.menuStrip_Del});
             this.menuStrip_dgv.Name = "menuStrip_dgv";
-            this.menuStrip_dgv.Size = new System.Drawing.Size(167, 48);
+            this.menuStrip_dgv.Size = new System.Drawing.Size(181, 70);
             // 
             // menuStrip_Att
             // 
             this.menuStrip_Att.Name = "menuStrip_Att";
-            this.menuStrip_Att.Size = new System.Drawing.Size(166, 22);
+            this.menuStrip_Att.Size = new System.Drawing.Size(180, 22);
             this.menuStrip_Att.Text = "Atualizar Produto";
             this.menuStrip_Att.Click += new System.EventHandler(this.Att_Click);
             // 
             // menuStrip_Del
             // 
             this.menuStrip_Del.Name = "menuStrip_Del";
-            this.menuStrip_Del.Size = new System.Drawing.Size(166, 22);
+            this.menuStrip_Del.Size = new System.Drawing.Size(180, 22);
             this.menuStrip_Del.Text = "Excluir Produto";
             // 
             // frm_buscaProduto
@@ -106,8 +106,7 @@
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txt_Id);
             this.Name = "frm_buscaProduto";
-            this.Text = "\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'" +
-    "\'\'\'\'\'\'\'\'";
+            this.Text = "Buscar Produto";
             this.Load += new System.EventHandler(this.frm_buscaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Produtos)).EndInit();
             this.menuStrip_dgv.ResumeLayout(false);

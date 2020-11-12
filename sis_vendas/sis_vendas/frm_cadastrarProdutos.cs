@@ -23,39 +23,30 @@ namespace sis_vendas
 
         private void frm_cadastrarProdutos_Load(object sender, EventArgs e)
         {
-            if (x == true && Convert.ToString( produto.Id) != null)
-            {
-                var product = dbContext.Produto.Where(p => p.Id == produto.Id).First();
+            cbx_Categoria.DataSource = dbContext.Categoria.Select(p => p.Nome).ToList();
 
-                txt_nome.Text = product.Nome;
-                txt_Valor.Text = Convert.ToString(product.Valor);
+            cbx_Categoria.Text = "Selecione";
 
-                dgv_cadastrosProdutos.Enabled = false;
-
-                dgv_cadastrosProdutos.Visible = false;
-
-                btn_Cadastrar.Text = "Atualizar";
-            }
-
-            else
-            {
-                cbx_Categoria.DataSource = dbContext.Categoria.Select(p => p.Nome).ToList();
-
-                cbx_Categoria.Text = "Selecione";
-
-                dgv_cadastrosProdutos.DataSource = dbContext.Produto.ToList();
-            }
-
+            preencheDgv();
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
-            adicionarProduto adicionar = new adicionarProduto();
+            try
+            {
+                adicionarProduto adicionar = new adicionarProduto();
 
-            adicionar.adicionarProdutoes(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), double.Parse(txt_Valor.Text), int.Parse(txt_qtd.Text));
+                adicionar.adicionarProdutos(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), double.Parse(txt_Valor.Text), int.Parse(txt_qtd.Text));
 
-            limpaFormulario();
+                limpaFormulario();
 
+                preencheDgv();
+            }
+
+            catch
+            {
+                MessageBox.Show("Não, foi possível cadastrar este produto. Por favor verifique os campos");
+            }
         }
 
         private void limpaFormulario()
@@ -65,5 +56,33 @@ namespace sis_vendas
             txt_Valor.Text = string.Empty;
         }
 
+        private void preencheDgv()
+        {
+            dgv_cadastrosProdutos.DataSource = dbContext.Produto.ToList();
+        }
+
+        private void txt_Valor_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                double valor = Convert.ToDouble(txt_Valor.Text.Replace("R$ ", ""));
+                txt_Valor.Text = string.Format("{0:c}", valor);
+            }
+
+            catch
+            {
+                this.Text = "";
+
+                MessageBox.Show("Valor invalido !");
+            }
+
+        }
+
+        private void txt_Valor_Click(object sender, EventArgs e)
+        {
+            txt_Valor.SelectionStart = txt_Valor.Text.Length + 1;
+        }
+
     }
 }
+
