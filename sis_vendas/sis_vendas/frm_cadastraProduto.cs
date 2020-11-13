@@ -5,15 +5,17 @@ using System.Windows.Forms;
 
 namespace sis_vendas
 {
-    public partial class frm_cadastrarProdutos : Form
+    public partial class frm_cadastraProduto : Form
     {
         sisVendasContext dbContext = new sisVendasContext();
 
         Produto produto = new Produto();
 
+        crudProduto crudProduto = new crudProduto();
+
         bool? x;
 
-        public frm_cadastrarProdutos(bool? x, Produto produto)
+        public frm_cadastraProduto(bool? x, Produto produto)
         {
             this.x = x;
             this.produto = produto;
@@ -34,9 +36,7 @@ namespace sis_vendas
         {
             try
             {
-                adicionarProduto adicionar = new adicionarProduto();
-
-                adicionar.adicionarProdutos(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), double.Parse(txt_Valor.Text), int.Parse(txt_qtd.Text));
+                crudProduto.adicionaProduto(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), decimal.Parse(txt_Valor.Text.Replace("R$ ", "")), int.Parse(txt_qtd.Text));
 
                 limpaFormulario();
 
@@ -71,16 +71,11 @@ namespace sis_vendas
 
             catch
             {
-                this.Text = "";
+                txt_Valor.Text = "";
 
-                MessageBox.Show("Valor invalido !");
+                MessageBox.Show("Valor invalido !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-        }
-
-        private void txt_Valor_Click(object sender, EventArgs e)
-        {
-            txt_Valor.SelectionStart = txt_Valor.Text.Length + 1;
         }
 
     }

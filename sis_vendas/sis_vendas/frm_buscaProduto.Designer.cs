@@ -33,11 +33,11 @@
             this.lbl_Id = new System.Windows.Forms.Label();
             this.btn_Busca = new System.Windows.Forms.Button();
             this.dgv_Produtos = new System.Windows.Forms.DataGridView();
-            this.menuStrip_dgv = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip_DgvProdutos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip_Att = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_Del = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Produtos)).BeginInit();
-            this.menuStrip_dgv.SuspendLayout();
+            this.menuStrip_DgvProdutos.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Id
@@ -69,19 +69,19 @@
             // dgv_Produtos
             // 
             this.dgv_Produtos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Produtos.ContextMenuStrip = this.menuStrip_dgv;
+            this.dgv_Produtos.ContextMenuStrip = this.menuStrip_DgvProdutos;
             this.dgv_Produtos.Location = new System.Drawing.Point(12, 68);
             this.dgv_Produtos.Name = "dgv_Produtos";
             this.dgv_Produtos.Size = new System.Drawing.Size(599, 200);
             this.dgv_Produtos.TabIndex = 3;
             // 
-            // menuStrip_dgv
+            // menuStrip_DgvProdutos
             // 
-            this.menuStrip_dgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip_DgvProdutos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStrip_Att,
             this.menuStrip_Del});
-            this.menuStrip_dgv.Name = "menuStrip_dgv";
-            this.menuStrip_dgv.Size = new System.Drawing.Size(181, 70);
+            this.menuStrip_DgvProdutos.Name = "menuStrip_dgv";
+            this.menuStrip_DgvProdutos.Size = new System.Drawing.Size(167, 48);
             // 
             // menuStrip_Att
             // 
@@ -95,6 +95,7 @@
             this.menuStrip_Del.Name = "menuStrip_Del";
             this.menuStrip_Del.Size = new System.Drawing.Size(180, 22);
             this.menuStrip_Del.Text = "Excluir Produto";
+            this.menuStrip_Del.Click += new System.EventHandler(this.menuStrip_Del_Click);
             // 
             // frm_buscaProduto
             // 
@@ -109,7 +110,7 @@
             this.Text = "Buscar Produto";
             this.Load += new System.EventHandler(this.frm_buscaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Produtos)).EndInit();
-            this.menuStrip_dgv.ResumeLayout(false);
+            this.menuStrip_DgvProdutos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,7 +122,7 @@
         private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.Button btn_Busca;
         private System.Windows.Forms.DataGridView dgv_Produtos;
-        private System.Windows.Forms.ContextMenuStrip menuStrip_dgv;
+        private System.Windows.Forms.ContextMenuStrip menuStrip_DgvProdutos;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_Att;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_Del;
     }

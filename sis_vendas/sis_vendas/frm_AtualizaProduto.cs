@@ -13,6 +13,8 @@ namespace sis_vendas
 
         Produto produto = new Produto();
 
+        crudProduto crudProduto = new crudProduto();
+
         public frm_AtualizaProduto(bool? x, Produto produto)
         {
             this.x = x;
@@ -43,9 +45,7 @@ namespace sis_vendas
         {
             if (MessageBox.Show("Você realmente deseja atualizar este produto ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                atualizarProduto atualizaProduto = new atualizarProduto();
-
-                atualizaProduto.attProduto(produto, txt_Nome.Text, double.Parse(txt_Valor.Text), cbx_Categoria.SelectedItem.ToString());
+                crudProduto.atualizaProduto(produto, txt_Nome.Text, decimal.Parse(txt_Valor.Text.Replace("R$ ", "")), cbx_Categoria.SelectedItem.ToString());
 
                 Close();
             }
@@ -56,5 +56,25 @@ namespace sis_vendas
             }
 
         }
+
+        private void txt_Valor_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                double valor = Convert.ToDouble(txt_Valor.Text.Replace("R$ ", ""));
+                txt_Valor.Text = string.Format("{0:c}", valor);
+            }
+
+            catch
+            {
+                txt_Valor.Text = "";
+
+                MessageBox.Show("Valor invalido !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+
+
+
     }
 }

@@ -19,7 +19,7 @@ namespace sis_vendas
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm_cadastro = new frm_cadastrarProdutos(null, null);
+            Form frm_cadastro = new frm_cadastraProduto(null, null);
             frm_cadastro.Show();
         }
 

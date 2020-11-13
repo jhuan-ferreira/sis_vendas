@@ -56,20 +56,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente\crudCliente.cs" />
+    <Compile Include="Migrations\202011131322034_Att_3.cs" />
+    <Compile Include="Migrations\202011131322034_Att_3.designer.cs">
+      <DependentUpon>202011131322034_Att_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\clienteConfigModel.cs" />
+    <Compile Include="Model\produtoConfigModel.cs" />
+    <Compile Include="frm_CadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CadastroCliente.Designer.cs">
+      <DependentUpon>frm_CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto\crudProduto.cs" />
     <Compile Include="frm_AtualizaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_AtualizaProduto.Designer.cs">
       <DependentUpon>frm_AtualizaProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produto\atualizarProduto.cs" />
+    <Compile Include="Migrations\202011121434361_Att_2.cs" />
+    <Compile Include="Migrations\202011121434361_Att_2.designer.cs">
+      <DependentUpon>202011121434361_Att_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_buscaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_buscaProduto.Designer.cs">
       <DependentUpon>frm_buscaProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produto\adicionarProduto.cs" />
     <Compile Include="Migrations\202011081317245_AttBancoDeDados.cs" />
     <Compile Include="Migrations\202011081317245_AttBancoDeDados.designer.cs">
       <DependentUpon>202011081317245_AttBancoDeDados.cs</DependentUpon>
@@ -82,11 +98,11 @@
     <Compile Include="frm_principal.Designer.cs">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_cadastrarProdutos.cs">
+    <Compile Include="frm_cadastraProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_cadastrarProdutos.Designer.cs">
-      <DependentUpon>frm_cadastrarProdutos.cs</DependentUpon>
+    <Compile Include="frm_cadastraProduto.Designer.cs">
+      <DependentUpon>frm_cadastraProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202011060103123_Initial.cs" />
     <Compile Include="Migrations\202011060103123_Initial.designer.cs">
@@ -109,11 +125,14 @@
     <EmbeddedResource Include="frm_buscaProduto.resx">
       <DependentUpon>frm_buscaProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_CadastroCliente.resx">
+      <DependentUpon>frm_CadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_principal.resx">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_cadastrarProdutos.resx">
-      <DependentUpon>frm_cadastrarProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="frm_cadastraProduto.resx">
+      <DependentUpon>frm_cadastraProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011060103123_Initial.resx">
       <DependentUpon>202011060103123_Initial.cs</DependentUpon>
@@ -123,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011081317245_AttBancoDeDados.resx">
       <DependentUpon>202011081317245_AttBancoDeDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011121434361_Att_2.resx">
+      <DependentUpon>202011121434361_Att_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011131322034_Att_3.resx">
+      <DependentUpon>202011131322034_Att_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

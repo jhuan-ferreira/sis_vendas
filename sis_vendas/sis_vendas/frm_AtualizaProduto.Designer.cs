@@ -60,6 +60,7 @@
             this.txt_Valor.Name = "txt_Valor";
             this.txt_Valor.Size = new System.Drawing.Size(100, 20);
             this.txt_Valor.TabIndex = 2;
+            this.txt_Valor.LostFocus += new System.EventHandler(this.txt_Valor_LostFocus);
             // 
             // cbx_Categoria
             // 

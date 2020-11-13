@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using sis_vendas.Model;
 
 namespace sis_vendas
 {
@@ -21,6 +17,16 @@ namespace sis_vendas
         public DbSet <Produto> Produto{ get; set; }
         public DbSet <Cliente> Cliente { get; set; }
         public DbSet <Categoria> Categoria { get; set; }
+
+        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new produtoConfigModel());
+            modelBuilder.Configurations.Add(new clienteConfigModel());
+
+                
+        }
 
     }
 }

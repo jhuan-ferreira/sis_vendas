@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace sis_vendas
 {
@@ -7,7 +6,7 @@ namespace sis_vendas
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
         public int categoriaId { get; set; }
         public string dataCadastro { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace sis_vendas
 {
-    partial class frm_cadastrarProdutos
+    partial class frm_cadastraProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.txt_Valor.Size = new System.Drawing.Size(100, 20);
             this.txt_Valor.TabIndex = 3;
             this.txt_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Valor.Click += new System.EventHandler(this.txt_Valor_Click);
+
             this.txt_Valor.LostFocus += new System.EventHandler(this.txt_Valor_LostFocus);
             // 
             // lbl_qtd
