@@ -19,14 +19,26 @@ namespace sis_vendas
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm_cadastro = new frm_cadastraProduto(null, null);
-            frm_cadastro.Show();
+            Form frmCadastro = new frm_CadastraProduto(null, null);
+            frmCadastro.Show();
         }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm_Busca = new frm_buscaProduto();
-            frm_Busca.Show();
+            Form frmBusca = new frm_BuscaProduto();
+            frmBusca.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmCadastroCliente = new frm_CadastroCliente();
+            frmCadastroCliente.Show();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmEscolherClienteVenda = new frm_escolherClienteVenda();
+            frmEscolherClienteVenda.Show();
         }
     }
 }

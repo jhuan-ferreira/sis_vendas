@@ -1,13 +1,12 @@
 ﻿
-
 namespace sis_vendas
 {
-   public class VendaDetalhe
+    public class VendaDetalhe
     {
-        public int vendaDetalheId { get; set; }
-        public Venda Venda { get; set; }
-        public Produto Produto { get; set; }
-        public double Valor { get; set; }
-         
+        public int VendaDetalheId { get; set; }
+        public int VendaId { get; set; }
+        public int ProdutoId { get; set; }
+        public int Quantidade { get; set; }
+        public decimal ValorUnitario { get; set; }
     }
 }

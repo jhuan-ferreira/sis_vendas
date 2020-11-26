@@ -1,5 +1,4 @@
-﻿
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 
 namespace sis_vendas
 {
@@ -7,7 +6,7 @@ namespace sis_vendas
     {
         public produtoConfigModel()
         {
-            this.HasKey(k => k.Id);
+            this.HasKey(k => k.ProdutoId);
             this.Property(p => p.Nome).HasMaxLength(60).IsRequired();
             this.Property(p => p.Valor).IsRequired();
             this.Property(p => p.categoriaId).IsRequired();
@@ -15,7 +14,5 @@ namespace sis_vendas
         }
 
 
-    }
-
-        
+    }       
 }

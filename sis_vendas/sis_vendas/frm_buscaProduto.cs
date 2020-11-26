@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace sis_vendas
 {
-    public partial class frm_buscaProduto : Form
+    public partial class frm_BuscaProduto : Form
     {
         sisVendasContext dbContext = new sisVendasContext();
         Produto produto = new Produto();
         crudProduto crudProduto = new crudProduto();
 
-        public frm_buscaProduto()
+        public frm_BuscaProduto()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace sis_vendas
             if (result)
             {
                 int id = int.Parse(txt_Id.Text);
-                dgv_Produtos.DataSource = dbContext.Produto.Where(p => p.Id == id).ToList();
+                dgv_Produtos.DataSource = dbContext.Produtos.Where(p => p.ProdutoId == id).ToList();
             }
 
             else if (string.IsNullOrEmpty(txt_Id.Text) || string.IsNullOrWhiteSpace(txt_Id.Text))
@@ -35,7 +35,7 @@ namespace sis_vendas
 
             else
             {
-                dgv_Produtos.DataSource = dbContext.Produto.Where(p => p.Nome == txt_Id.Text).ToList();
+                dgv_Produtos.DataSource = dbContext.Produtos.Where(p => p.Nome == txt_Id.Text).ToList();
             }
 
             txt_Id.Text = string.Empty;
@@ -45,7 +45,7 @@ namespace sis_vendas
         {
             int id = int.Parse(dgv_Produtos.CurrentRow.Cells[0].Value.ToString());
 
-            produto = dbContext.Produto.Where(p => p.Id == id).First();
+            produto = dbContext.Produtos.Where(p => p.ProdutoId == id).First();
 
             Form frm_AtualizaProduto = new frm_AtualizaProduto(true, produto);
             frm_AtualizaProduto.Show();
@@ -60,23 +60,26 @@ namespace sis_vendas
 
         private void menuStrip_Del_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Você realmente deseja excluir este produto ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            try
             {
-                crudProduto.removerProduto(int.Parse(dgv_Produtos.CurrentRow.Cells[0].Value.ToString()));
-                preencheDgv();
+
+                if (MessageBox.Show("Você realmente deseja excluir este Produto/mServiço ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    crudProduto.removerProduto(int.Parse(dgv_Produtos.CurrentRow.Cells[0].Value.ToString()));
+                    preencheDgv();
+                }
+
             }
 
-            else
+            catch
             {
-                return;
+                MessageBox.Show("Não é possível excluir este Produto/Serviço", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
         private void preencheDgv()
         {
-            dgv_Produtos.DataSource = dbContext.Produto.ToList();
+            dgv_Produtos.DataSource = dbContext.Produtos.ToList();
         }
 
     }

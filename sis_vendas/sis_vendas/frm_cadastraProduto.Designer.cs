@@ -1,6 +1,6 @@
 ﻿namespace sis_vendas
 {
-    partial class frm_cadastraProduto
+    partial class frm_CadastraProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,10 @@
             this.dgv_cadastrosProdutos = new System.Windows.Forms.DataGridView();
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.cbx_Categoria = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cadastrosProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +77,6 @@
             this.txt_Valor.Size = new System.Drawing.Size(100, 20);
             this.txt_Valor.TabIndex = 3;
             this.txt_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-
             this.txt_Valor.LostFocus += new System.EventHandler(this.txt_Valor_LostFocus);
             // 
             // lbl_qtd
@@ -103,9 +106,17 @@
             // 
             // dgv_cadastrosProdutos
             // 
+            this.dgv_cadastrosProdutos.AllowUserToAddRows = false;
+            this.dgv_cadastrosProdutos.AllowUserToDeleteRows = false;
             this.dgv_cadastrosProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cadastrosProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dgv_cadastrosProdutos.Location = new System.Drawing.Point(15, 93);
             this.dgv_cadastrosProdutos.Name = "dgv_cadastrosProdutos";
+            this.dgv_cadastrosProdutos.ReadOnly = true;
             this.dgv_cadastrosProdutos.Size = new System.Drawing.Size(599, 168);
             this.dgv_cadastrosProdutos.TabIndex = 8;
             // 
@@ -128,7 +139,35 @@
             this.cbx_Categoria.TabIndex = 10;
             this.cbx_Categoria.Text = "Selecione";
             // 
-            // frm_cadastrarProdutos
+            // Column1
+            // 
+            this.Column1.HeaderText = "Produto ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 138;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Descrição";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 139;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Categoria";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 139;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Valor Unitário";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 139;
+            // 
+            // frm_CadastraProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +182,8 @@
             this.Controls.Add(this.lbl_valor);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
-            this.Name = "frm_cadastrarProdutos";
-            this.Text = "MMMMMMM";
+            this.Name = "frm_CadastraProduto";
+            this.Text = "Cadastro de Produto/Serviços";
             this.Load += new System.EventHandler(this.frm_cadastrarProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cadastrosProdutos)).EndInit();
             this.ResumeLayout(false);
@@ -164,5 +203,9 @@
         private System.Windows.Forms.DataGridView dgv_cadastrosProdutos;
         private System.Windows.Forms.Button btn_Cadastrar;
         private System.Windows.Forms.ComboBox cbx_Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

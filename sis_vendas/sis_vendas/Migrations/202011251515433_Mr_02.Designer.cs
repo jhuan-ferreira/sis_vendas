@@ -7,13 +7,13 @@ namespace sis_vendas.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AtualizacaoDasFks : IMigrationMetadata
+    public sealed partial class Mr_02 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AtualizacaoDasFks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mr_02));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011060110063_AtualizacaoDasFks"; }
+            get { return "202011251515433_Mr_02"; }
         }
         
         string IMigrationMetadata.Source

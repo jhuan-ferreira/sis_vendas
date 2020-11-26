@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace sis_vendas
 {
-    public partial class frm_cadastraProduto : Form
+    public partial class frm_CadastraProduto : Form
     {
         sisVendasContext dbContext = new sisVendasContext();
 
@@ -15,7 +15,7 @@ namespace sis_vendas
 
         bool? x;
 
-        public frm_cadastraProduto(bool? x, Produto produto)
+        public frm_CadastraProduto(bool? x, Produto produto)
         {
             this.x = x;
             this.produto = produto;
@@ -25,27 +25,29 @@ namespace sis_vendas
 
         private void frm_cadastrarProdutos_Load(object sender, EventArgs e)
         {
-            cbx_Categoria.DataSource = dbContext.Categoria.Select(p => p.Nome).ToList();
+            cbx_Categoria.DataSource = dbContext.Categorias.Select(p => p.Nome).ToList();
 
             cbx_Categoria.Text = "Selecione";
-
-            preencheDgv();
+           
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
             try
             {
-                crudProduto.adicionaProduto(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), decimal.Parse(txt_Valor.Text.Replace("R$ ", "")), int.Parse(txt_qtd.Text));
+                if (MessageBox.Show("Você Deseja realmente cadastrar este Produto/Serviço", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    crudProduto.adicionaProduto(txt_nome.Text, cbx_Categoria.SelectedItem.ToString(), decimal.Parse(txt_Valor.Text.Replace("R$ ", "")), int.Parse(txt_qtd.Text));
 
-                limpaFormulario();
+                    limpaFormulario();
 
-                preencheDgv();
+                    crudProduto.preencheDgv(dgv_cadastrosProdutos);
+                }
             }
 
             catch
             {
-                MessageBox.Show("Não, foi possível cadastrar este produto. Por favor verifique os campos");
+                MessageBox.Show("Não, foi possível cadastrar este Produto/Serviço. Por favor verifique os campos");
             }
         }
 
@@ -56,10 +58,6 @@ namespace sis_vendas
             txt_Valor.Text = string.Empty;
         }
 
-        private void preencheDgv()
-        {
-            dgv_cadastrosProdutos.DataSource = dbContext.Produto.ToList();
-        }
 
         private void txt_Valor_LostFocus(object sender, EventArgs e)
         {
@@ -77,6 +75,7 @@ namespace sis_vendas
             }
 
         }
+
 
     }
 }

@@ -7,13 +7,13 @@ namespace sis_vendas.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AttBancoDeDados : IMigrationMetadata
+    public sealed partial class Mr_03 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AttBancoDeDados));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mr_03));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011081317245_AttBancoDeDados"; }
+            get { return "202011251958295_Mr_03"; }
         }
         
         string IMigrationMetadata.Source

@@ -36,6 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Correios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios-Api.1.1.1\lib\portable-net45+win\Correios.dll</HintPath>
+    </Reference>
+    <Reference Include="Correios.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios.CEP.Net.1.1.6\lib\Correios.Net.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,11 +64,59 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente\crudCliente.cs" />
-    <Compile Include="Migrations\202011131322034_Att_3.cs" />
-    <Compile Include="Migrations\202011131322034_Att_3.designer.cs">
-      <DependentUpon>202011131322034_Att_3.cs</DependentUpon>
+    <Compile Include="Venda\crudVendas.cs" />
+    <Compile Include="Endereco\crudEndereco.cs" />
+    <Compile Include="frm_buscaCliente.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_buscaCliente.Designer.cs">
+      <DependentUpon>frm_buscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_escolherClienteVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_escolherClienteVenda.Designer.cs">
+      <DependentUpon>frm_escolherClienteVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Venda.Designer.cs">
+      <DependentUpon>frm_Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011250149438_Att_131.cs" />
+    <Compile Include="Migrations\202011250149438_Att_131.designer.cs">
+      <DependentUpon>202011250149438_Att_131.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011250234158_Att_1311.cs" />
+    <Compile Include="Migrations\202011250234158_Att_1311.designer.cs">
+      <DependentUpon>202011250234158_Att_1311.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251403095_Mr_01.cs" />
+    <Compile Include="Migrations\202011251403095_Mr_01.designer.cs">
+      <DependentUpon>202011251403095_Mr_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251515433_Mr_02.cs" />
+    <Compile Include="Migrations\202011251515433_Mr_02.designer.cs">
+      <DependentUpon>202011251515433_Mr_02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251958295_Mr_03.cs" />
+    <Compile Include="Migrations\202011251958295_Mr_03.designer.cs">
+      <DependentUpon>202011251958295_Mr_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011252055179_Mr_04.cs" />
+    <Compile Include="Migrations\202011252055179_Mr_04.designer.cs">
+      <DependentUpon>202011252055179_Mr_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Bairro.cs" />
+    <Compile Include="Model\bairroModelConfig.cs" />
+    <Compile Include="Model\Cidade.cs" />
+    <Compile Include="Model\cidadeConfigModel.cs" />
     <Compile Include="Model\clienteConfigModel.cs" />
+    <Compile Include="Model\Estado.cs" />
+    <Compile Include="Model\estadoConfigModel.cs" />
+    <Compile Include="Model\Logadouro.cs" />
+    <Compile Include="Model\logadouroModelConfig.cs" />
     <Compile Include="Model\produtoConfigModel.cs" />
     <Compile Include="frm_CadastroCliente.cs">
       <SubType>Form</SubType>
@@ -69,6 +124,7 @@
     <Compile Include="frm_CadastroCliente.Designer.cs">
       <DependentUpon>frm_CadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\VendaDetalhe.cs" />
     <Compile Include="Produto\crudProduto.cs" />
     <Compile Include="frm_AtualizaProduto.cs">
       <SubType>Form</SubType>
@@ -76,19 +132,11 @@
     <Compile Include="frm_AtualizaProduto.Designer.cs">
       <DependentUpon>frm_AtualizaProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011121434361_Att_2.cs" />
-    <Compile Include="Migrations\202011121434361_Att_2.designer.cs">
-      <DependentUpon>202011121434361_Att_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_buscaProduto.cs">
+    <Compile Include="frm_BuscaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_buscaProduto.Designer.cs">
-      <DependentUpon>frm_buscaProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011081317245_AttBancoDeDados.cs" />
-    <Compile Include="Migrations\202011081317245_AttBancoDeDados.designer.cs">
-      <DependentUpon>202011081317245_AttBancoDeDados.cs</DependentUpon>
+    <Compile Include="frm_BuscaProduto.Designer.cs">
+      <DependentUpon>frm_BuscaProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Cliente.cs" />
@@ -98,19 +146,15 @@
     <Compile Include="frm_principal.Designer.cs">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_cadastraProduto.cs">
+    <Compile Include="frm_CadastraProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_cadastraProduto.Designer.cs">
-      <DependentUpon>frm_cadastraProduto.cs</DependentUpon>
+    <Compile Include="frm_CadastraProduto.Designer.cs">
+      <DependentUpon>frm_CadastraProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202011060103123_Initial.cs" />
     <Compile Include="Migrations\202011060103123_Initial.designer.cs">
       <DependentUpon>202011060103123_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011060110063_AtualizacaoDasFks.cs" />
-    <Compile Include="Migrations\202011060110063_AtualizacaoDasFks.designer.cs">
-      <DependentUpon>202011060110063_AtualizacaoDasFks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Produto.cs" />
@@ -118,36 +162,50 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\sisVendasContext.cs" />
     <Compile Include="Model\Venda.cs" />
-    <Compile Include="Model\VendaDetalhe.cs" />
     <EmbeddedResource Include="frm_AtualizaProduto.resx">
       <DependentUpon>frm_AtualizaProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_buscaProduto.resx">
-      <DependentUpon>frm_buscaProduto.cs</DependentUpon>
+    <EmbeddedResource Include="frm_buscaCliente.resx">
+      <DependentUpon>frm_buscaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_BuscaProduto.resx">
+      <DependentUpon>frm_BuscaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CadastroCliente.resx">
       <DependentUpon>frm_CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_escolherClienteVenda.resx">
+      <DependentUpon>frm_escolherClienteVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_principal.resx">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_cadastraProduto.resx">
-      <DependentUpon>frm_cadastraProduto.cs</DependentUpon>
+    <EmbeddedResource Include="frm_CadastraProduto.resx">
+      <DependentUpon>frm_CadastraProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Venda.resx">
+      <DependentUpon>frm_Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011060103123_Initial.resx">
       <DependentUpon>202011060103123_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011060110063_AtualizacaoDasFks.resx">
-      <DependentUpon>202011060110063_AtualizacaoDasFks.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011250149438_Att_131.resx">
+      <DependentUpon>202011250149438_Att_131.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011081317245_AttBancoDeDados.resx">
-      <DependentUpon>202011081317245_AttBancoDeDados.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011250234158_Att_1311.resx">
+      <DependentUpon>202011250234158_Att_1311.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011121434361_Att_2.resx">
-      <DependentUpon>202011121434361_Att_2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011251403095_Mr_01.resx">
+      <DependentUpon>202011251403095_Mr_01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011131322034_Att_3.resx">
-      <DependentUpon>202011131322034_Att_3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011251515433_Mr_02.resx">
+      <DependentUpon>202011251515433_Mr_02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251958295_Mr_03.resx">
+      <DependentUpon>202011251958295_Mr_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011252055179_Mr_04.resx">
+      <DependentUpon>202011252055179_Mr_04.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

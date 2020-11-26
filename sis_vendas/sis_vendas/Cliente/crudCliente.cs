@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace sis_vendas
 {
@@ -12,30 +8,47 @@ namespace sis_vendas
         sisVendasContext dbContext = new sisVendasContext();
         Cliente cliente = new Cliente();
 
-        public void adicionarCliente(string nome, string telefone, string email, string endereco, string cpf)
+        public void adicionarCliente(string nome, string telefone, string email, string endereco, string documento)
         {
-            dbContext.Cliente.Add(new Cliente { Nome = nome, Tel = telefone, Email = email, Endereco = endereco });
 
-            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrWhiteSpace(nome))
+            if (!string.IsNullOrEmpty(nome) || string.IsNullOrWhiteSpace(nome))
             {
                 cliente.Nome = nome;
             }
 
-            else if (telefone.Length >= 13 && telefone.Length <= 14)
+            else
             {
+                return;
+            }
 
+            if (!string.IsNullOrEmpty(telefone) || string.IsNullOrWhiteSpace(telefone))
+            {
                 cliente.Tel = telefone;
             }
 
-            else if (string.IsNullOrEmpty(email) && string.IsNullOrWhiteSpace(email))
+            else
             {
-                cliente.Email = email;
+                return;
             }
 
-            else if (cpf.Length >= 14 && cpf.Length <= 15)
+            if (!string.IsNullOrEmpty(documento) || string.IsNullOrWhiteSpace(documento))
             {
-                cliente.Cpf = cpf;
+                cliente.Documento = documento;
+
             }
+
+            else
+            {
+                return;
+            }
+
+            var e = dbContext.logadouros.Where(p => p.Endereco == endereco).First();
+
+            cliente.Email = email;
+
+            cliente.enderecoId = e.LogadouroId;
+
+            dbContext.Clientes.Add(cliente);
 
             dbContext.SaveChanges();
         }

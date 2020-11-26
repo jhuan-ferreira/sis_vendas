@@ -27,16 +27,16 @@ namespace sis_vendas
 
         private void frm_AtualizaProduto_Load(object sender, EventArgs e)
         {
-            if (Convert.ToString(produto.Id) != null)
+            if (Convert.ToString(produto.ProdutoId) != null)
             {
-                cbx_Categoria.DataSource = dbContext.Categoria.Select(p => p.Nome).ToList();
+                cbx_Categoria.DataSource = dbContext.Categorias.Select(p => p.Nome).ToList();
 
-                var product = dbContext.Produto.Where(p => p.Id == produto.Id).First();
+                var product = dbContext.Produtos.Where(p => p.ProdutoId == produto.ProdutoId).First();
 
                 txt_Nome.Text = product.Nome;
                 txt_Valor.Text = Convert.ToString(product.Valor);
 
-                cbx_Categoria.Text = Convert.ToString(dbContext.Categoria.Where(p => p.categoriaId == produto.categoriaId).Select(p => p.Nome).First());
+                cbx_Categoria.Text = Convert.ToString(dbContext.Categorias.Where(p => p.categoriaId == produto.categoriaId).Select(p => p.Nome).First());
 
             }
         }

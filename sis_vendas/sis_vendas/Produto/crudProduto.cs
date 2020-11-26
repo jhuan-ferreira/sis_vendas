@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sis_vendas
 {
@@ -42,7 +40,7 @@ namespace sis_vendas
 
             if (!string.IsNullOrEmpty(categoria) && !string.IsNullOrWhiteSpace(categoria))
             {
-                produto.Categoria = dbContext.Categoria.Where(c => c.Nome == categoria).First();
+                produto.Categoria = dbContext.Categorias.Where(c => c.Nome == categoria).First();
             }
 
             else
@@ -52,18 +50,18 @@ namespace sis_vendas
 
             produto.dataCadastro = DateTime.Now.ToShortDateString();
 
-            dbContext.Produto.Add(produto);
+            dbContext.Produtos.Add(produto);
             dbContext.SaveChanges();
 
         }
 
         public void atualizaProduto(Produto produto, string nome, decimal valor, string categoria)
         {
-            var product = dbContext.Produto.Where(p => p.Nome == produto.Nome).First();
+            var product = dbContext.Produtos.Where(p => p.Nome == produto.Nome).First();
 
             product.Nome = nome;
             product.Valor = valor;
-            product.Categoria = dbContext.Categoria.Where(c => c.Nome == categoria).First();
+            product.Categoria = dbContext.Categorias.Where(c => c.Nome == categoria).First();
 
             dbContext.Entry(product).State = System.Data.Entity.EntityState.Modified;
             dbContext.SaveChanges();
@@ -72,12 +70,25 @@ namespace sis_vendas
 
         public void removerProduto(int id)
         {
-            var produto = dbContext.Produto.Where(p => p.Id == id).First();
+            var produto = dbContext.Produtos.Where(p => p.ProdutoId == id).First();
 
-            dbContext.Produto.Remove(produto);
+            dbContext.Produtos.Remove(produto);
 
             dbContext.SaveChanges();
         }
+
+
+        public void preencheDgv(DataGridView dgv)
+        {
+            var index = dgv.Rows.Add();
+
+
+            dgv.Rows[index].Cells[0].Value = produto.ProdutoId;
+            dgv.Rows[index].Cells[1].Value = produto.Nome;
+            dgv.Rows[index].Cells[2].Value = dbContext.Categorias.Where(p => p.categoriaId == produto.categoriaId).Select(p => p.Nome).First();
+            dgv.Rows[index].Cells[3].Value = produto.Valor;
+        }
+
 
     }
 }

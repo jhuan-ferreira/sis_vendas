@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace sis_vendas
 {
    public class Produto
     {
-        public int Id { get; set; }
+        
+        //[ForeignKey("ProdutoId")]
+        
+        public int ProdutoId { get; set; }
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public int categoriaId { get; set; }
@@ -12,7 +17,6 @@ namespace sis_vendas
 
         public Categoria Categoria { get; set; }
 
-        public virtual List<Venda> Vendas { get; set; }
 
     }
 }

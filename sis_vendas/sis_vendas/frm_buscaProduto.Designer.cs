@@ -1,6 +1,6 @@
 ﻿namespace sis_vendas
 {
-    partial class frm_buscaProduto
+    partial class frm_BuscaProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -34,15 +34,15 @@
             this.btn_Busca = new System.Windows.Forms.Button();
             this.dgv_Produtos = new System.Windows.Forms.DataGridView();
             this.menuStrip_DgvProdutos = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip_Att = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip_Del = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripItem_Atualiza = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripItem_Delete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Produtos)).BeginInit();
             this.menuStrip_DgvProdutos.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Id
             // 
-            this.txt_Id.Location = new System.Drawing.Point(42, 12);
+            this.txt_Id.Location = new System.Drawing.Point(52, 23);
             this.txt_Id.Name = "txt_Id";
             this.txt_Id.Size = new System.Drawing.Size(189, 20);
             this.txt_Id.TabIndex = 0;
@@ -50,7 +50,7 @@
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(12, 15);
+            this.lbl_Id.Location = new System.Drawing.Point(22, 26);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(24, 13);
             this.lbl_Id.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btn_Busca
             // 
-            this.btn_Busca.Location = new System.Drawing.Point(247, 6);
+            this.btn_Busca.Location = new System.Drawing.Point(257, 17);
             this.btn_Busca.Name = "btn_Busca";
             this.btn_Busca.Size = new System.Drawing.Size(55, 30);
             this.btn_Busca.TabIndex = 2;
@@ -78,26 +78,26 @@
             // menuStrip_DgvProdutos
             // 
             this.menuStrip_DgvProdutos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuStrip_Att,
-            this.menuStrip_Del});
+            this.menuStripItem_Atualiza,
+            this.menuStripItem_Delete});
             this.menuStrip_DgvProdutos.Name = "menuStrip_dgv";
             this.menuStrip_DgvProdutos.Size = new System.Drawing.Size(167, 48);
             // 
-            // menuStrip_Att
+            // menuStripItem_Atualiza
             // 
-            this.menuStrip_Att.Name = "menuStrip_Att";
-            this.menuStrip_Att.Size = new System.Drawing.Size(180, 22);
-            this.menuStrip_Att.Text = "Atualizar Produto";
-            this.menuStrip_Att.Click += new System.EventHandler(this.Att_Click);
+            this.menuStripItem_Atualiza.Name = "menuStripItem_Atualiza";
+            this.menuStripItem_Atualiza.Size = new System.Drawing.Size(166, 22);
+            this.menuStripItem_Atualiza.Text = "Atualizar Produto";
+            this.menuStripItem_Atualiza.Click += new System.EventHandler(this.Att_Click);
             // 
-            // menuStrip_Del
+            // menuStripItem_Delete
             // 
-            this.menuStrip_Del.Name = "menuStrip_Del";
-            this.menuStrip_Del.Size = new System.Drawing.Size(180, 22);
-            this.menuStrip_Del.Text = "Excluir Produto";
-            this.menuStrip_Del.Click += new System.EventHandler(this.menuStrip_Del_Click);
+            this.menuStripItem_Delete.Name = "menuStripItem_Delete";
+            this.menuStripItem_Delete.Size = new System.Drawing.Size(166, 22);
+            this.menuStripItem_Delete.Text = "Excluir Produto";
+            this.menuStripItem_Delete.Click += new System.EventHandler(this.menuStrip_Del_Click);
             // 
-            // frm_buscaProduto
+            // frm_BuscaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             this.Controls.Add(this.btn_Busca);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txt_Id);
-            this.Name = "frm_buscaProduto";
+            this.Name = "frm_BuscaProduto";
             this.Text = "Buscar Produto";
             this.Load += new System.EventHandler(this.frm_buscaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Produtos)).EndInit();
@@ -123,7 +123,7 @@
         private System.Windows.Forms.Button btn_Busca;
         private System.Windows.Forms.DataGridView dgv_Produtos;
         private System.Windows.Forms.ContextMenuStrip menuStrip_DgvProdutos;
-        private System.Windows.Forms.ToolStripMenuItem menuStrip_Att;
-        private System.Windows.Forms.ToolStripMenuItem menuStrip_Del;
+        private System.Windows.Forms.ToolStripMenuItem menuStripItem_Atualiza;
+        private System.Windows.Forms.ToolStripMenuItem menuStripItem_Delete;
     }
 }

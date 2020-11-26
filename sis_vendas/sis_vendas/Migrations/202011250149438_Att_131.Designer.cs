@@ -7,13 +7,13 @@ namespace sis_vendas.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Att_2 : IMigrationMetadata
+    public sealed partial class Att_131 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Att_2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Att_131));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011121434361_Att_2"; }
+            get { return "202011250149438_Att_131"; }
         }
         
         string IMigrationMetadata.Source
