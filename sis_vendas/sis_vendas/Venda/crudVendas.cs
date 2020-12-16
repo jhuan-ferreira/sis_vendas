@@ -15,7 +15,7 @@ namespace sis_vendas
             Venda venda = new Venda();
             VendaDetalhe vendaDetalhe = new VendaDetalhe();
 
-            venda.Data = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            venda.Data = Convert.ToString(DateTime.Now.Date);
             venda.ValorTotal = total;
             venda.ValorFrete = valorFrete;
             venda.ClienteId = cliente.ClienteId;

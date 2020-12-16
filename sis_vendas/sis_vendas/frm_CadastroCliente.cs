@@ -110,9 +110,10 @@ namespace sis_vendas
             txt_Cidade.Text = string.Empty;
         }
 
+        private void txt_Cep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
-
-
+        }
     }
 
 

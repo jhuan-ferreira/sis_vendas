@@ -165,6 +165,7 @@
             this.txt_Cep.Name = "txt_Cep";
             this.txt_Cep.Size = new System.Drawing.Size(113, 20);
             this.txt_Cep.TabIndex = 5;
+            this.txt_Cep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txt_Cep_MaskInputRejected);
             this.txt_Cep.GotFocus += new System.EventHandler(this.txt_Cep_Focus);
             this.txt_Cep.Leave += new System.EventHandler(this.txt_Cep_Leave);
             // 

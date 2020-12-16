@@ -40,5 +40,12 @@ namespace sis_vendas
             Form frmEscolherClienteVenda = new frm_escolherClienteVenda();
             frmEscolherClienteVenda.Show();
         }
+
+        private void vendasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmRelatorioVenda = new frm_RelatorioVendas();
+            frmRelatorioVenda.Show();
+           
+        }
     }
 }
