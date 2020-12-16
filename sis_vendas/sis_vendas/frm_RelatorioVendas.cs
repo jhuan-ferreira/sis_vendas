@@ -53,6 +53,7 @@ namespace sis_vendas
             if (rdnBtnBairro.Checked)
             {
                 txtCep.ReadOnly = false;
+                txtUf.ReadOnly = true;
                 txtCep.Focus();
             }
         }
